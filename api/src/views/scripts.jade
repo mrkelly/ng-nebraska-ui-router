@@ -1,0 +1,26 @@
+case env
+  when 'production'
+    script(src="assets/js/app.min.js")
+  when 'debug'
+    script(src="assets/js/app.js")
+  default
+
+    // jQuery and Related
+    script(src='assets/js/jquery/dist/jquery.js')
+
+    // AngularJS libraries
+    script(src='assets/js/angular/angular.js')
+    script(src='assets/js/angular-resource/angular-resource.js')
+    script(src='assets/js/angular-sanitize/angular-sanitize.js')
+
+    // Angular UI Libraries
+    script(src='assets/js/angular-ui-router/release/angular-ui-router.js')
+
+    // Utilities
+    script(src='assets/js/lodash/dist/lodash.js')
+        
+    each script in applicationScripts
+      script(src=script)
+
+    each script in templateScripts
+      script(src=script)

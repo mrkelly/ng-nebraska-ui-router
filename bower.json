@@ -1,0 +1,31 @@
+{
+  "name": "ng-nebraska-ui-router",
+  "version": "0.0.0",
+  "description": "ng-nebraska presentation on ui-router",
+  "homepage": "https://github.com/mrkelly/ng-nebraska-ui-router",
+  "bugs": {
+    "url": "https://github.com/mrkelly/ng-nebraska-ui-router/issues"
+  },
+  "authors": [
+    "Mike Kelly <michael@mikeryankelly.com>"
+  ],
+  "keywords": [
+    "ng-bebraska",
+    "ui-router"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "client/assets/js"
+  ],
+  "dependencies": {
+    "lodash": "2.4.1",
+    "jquery": "2.1.0",
+    "angular": "1.2.14",
+    "angular-resource": "1.2.14",
+    "angular-sanitize": "1.2.14",
+    "angular-mocks": "1.2.14",
+    "angular-ui-router": "0.2.9",
+    "bootstrap": "3.1.1"
+  }
+}

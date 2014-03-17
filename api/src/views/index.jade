@@ -1,0 +1,24 @@
+doctype html
+html(lang="en", class="no-js", ng-app="main")
+  head
+    base(href="/")
+    title Angular UI Router
+
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+
+    meta(name="description" content="Angular UI Router")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+
+    meta(name="project.version", content="#{version}")
+
+    - if (env == 'production')
+      link(href="/assets/css/style.min.css", rel="stylesheet", type="text/css")
+    - else
+      link(href="/assets/css/style.css", rel="stylesheet", type="text/css")
+
+
+  body
+    div(ui-view)
+
+  include ./scripts
