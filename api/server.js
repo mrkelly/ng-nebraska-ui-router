@@ -9,6 +9,7 @@ console.log("Booting Development Server");
 var app = bootable(express());
 
 // Add environement phases to configure express for the target environment
+app.phase(bootable.initializers('api/config/initializers'));
 app.phase(require('bootable-environment')('api/config/environments'));
 
 // Load the Routes
@@ -33,5 +34,5 @@ app.boot(function(err) {
       process.send({ status: 'ready' });
     }
   });
-  
+
 });
