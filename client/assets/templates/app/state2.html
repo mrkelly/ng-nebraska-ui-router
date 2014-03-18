@@ -1,5 +1,15 @@
-<p class="pull-left lead">Data is inherited by child states.</p>
-<button class="btn btn-default pull-right"
-  ui-sref="app.state3">
-  Next <span class="glyphicon glyphicon glyphicon-arrow-right"></span>
-</button>
+<div class="row">
+  <div class="col-xs-12">
+    <p class="pull-left lead">With regex, we can enforce patterns on path parameters</p>
+    <button class="btn btn-default pull-right"
+      ui-sref="app.state3({'param1': 'Hello', 'param2': 'World'})">
+      Next <span class="glyphicon glyphicon glyphicon-arrow-right"></span>
+    </button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <pre>$stateParams : {{$stateParams | json}}</pre>
+  </div>
+</div>
