@@ -37,6 +37,15 @@ angular.module('app', [
           templateUrl: 'assets/templates/app/state3.html',
           data : {
             stateTitle: 'State 3'
+          },
+          resolve : {
+            content : function($q, $timeout){
+              var deferred = $q.defer();
+              $timeout(function() {
+                 deferred.resolve('We can also use resolves to prevent a state from loading before all the required data is available.');
+              }, 1000);
+              return deferred.promise;
+            }
           }
         });
 

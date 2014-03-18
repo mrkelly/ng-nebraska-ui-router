@@ -1,6 +1,6 @@
 angular.module('security.authentication.services', [ ])
 
-  .factory('authentication',function ($q, $control, $state, $location, securityContext, retryQueue) {
+  .factory('authentication',function ($q, $control, $state, $location, securityContext, retryQueue, stateListener) {
 
     // Register a handler for when an item is added to the retry retryQueue
     // This forces the login page on entry.
@@ -20,7 +20,7 @@ angular.module('security.authentication.services', [ ])
       // Show the login form
       showLogin: function () {
         // Get the current path and redirect param
-        var path = $location.path(),
+        var path = stateListener.getLastAttemptedTransition().url,
           redirectParam = $location.search().redirect;
 
         // If the redirect param is defined and it's the login page
@@ -34,7 +34,7 @@ angular.module('security.authentication.services', [ ])
 
         // If the current path is login and a redirect is defined,
         // go to the login state which preserving the current redirect param
-        if (path === '/login' && redirectParam) {
+        if (_.contains(path,'/login') && redirectParam) {
           $state.go('app.login', {redirect: redirectParam});
 
         // Otherwise, encode the current path URL as a redirect parameter to we can

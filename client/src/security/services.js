@@ -1,8 +1,25 @@
 angular.module('security.services', [ ])
 
+  .factory('stateListener', function ($rootScope) {
+
+    var lastAttemptedTransition;
+
+    var stateListener = {
+      getLastAttemptedTransition : function() {
+        return lastAttemptedTransition;
+      }
+    };
+
+    $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams, error){
+      lastAttemptedTransition = toState;
+    });
+
+    return stateListener;
+  })
+
   .factory('securityContext', function () {
-    
-    var securityContext = {      
+
+    var securityContext = {
       user : {},
       authenticated : false,
 
@@ -27,7 +44,7 @@ angular.module('security.services', [ ])
     var service = {
       // The security service puts its own handler in here!
       onItemAddedCallbacks: [],
-      
+
       hasMore: function () {
         return queue.length > 0;
       },

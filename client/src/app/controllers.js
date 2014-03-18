@@ -10,6 +10,6 @@ angular.module('app.controllers', [ ])
   .controller('State2Ctrl', function ($scope, $stateParams){
 
   })
-  .controller('State3Ctrl', function ($scope, $stateParams){
-
+  .controller('State3Ctrl', function ($scope, $stateParams, content){
+    $scope.content = content;
   });
