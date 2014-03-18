@@ -4,9 +4,12 @@
       <a class="navbar-brand" href="#">{{$state.current.data.appTitle}}</a>
     </div>
     <ul class="nav navbar-nav">
-      <li ui-sref-active="active"><a ui-sref="app.state1({simplePathVar: 'Hello World!'})">State 1</a></li>
-      <li ui-sref-active="active"><a ui-sref="app.state2({regexPathVar: 'abc123'})">State 2</a></li>
-      <li ui-sref-active="active"><a ui-sref="app.state3({'param1': 'Hello', 'param2': 'World'})">State 3</a></li>
+      <li ui-sref-active="active"><a ui-sref="app.state1">State 1</a></li>
+      <li ui-sref-active="active"><a ui-sref="app.state2">State 2</a></li>
+      <li ui-sref-active="active"><a ui-sref="app.state3">State 3</a></li>
+    </ul>
+    <ul class="nav navbar-nav pull-right">
+      <li ng-click="logout()"><a>Logout</a></li>
     </ul>
   </div>
 </div>

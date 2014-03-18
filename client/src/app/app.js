@@ -1,7 +1,9 @@
 angular.module('app', [
+  'app.values',
+  'app.resources',
   'app.controllers'
 ])
-  .config(function ($stateProvider) {
+  .config(function ($stateProvider, authorizationProvider) {
     $stateProvider
       .state('app', {
         controller: 'AppCtrl',
@@ -10,12 +12,8 @@ angular.module('app', [
           appTitle: 'Angular UI Router'
         }
       })
-        .state('app.invalid', {
-          url: '/invalid',
-          templateUrl: 'assets/templates/app/invalid.html'
-        })
         .state('app.state1', {
-          url: '/state1/{simplePathVar}',
+          url: '/state1',
           controller: 'State1Ctrl',
           templateUrl: 'assets/templates/app/state1.html',
           data : {
@@ -23,15 +21,18 @@ angular.module('app', [
           }
         })
         .state('app.state2', {
-          url: '/state2/{regexPathVar:[0-9a-fA-F]{1,8}}',
+          url: '/state2',
           controller: 'State2Ctrl',
           templateUrl: 'assets/templates/app/state2.html',
           data : {
             stateTitle: 'State 2'
+          },
+          resolve: {
+            authenticatedUser: authorizationProvider.requireAuthenticatedUser
           }
         })
         .state('app.state3', {
-          url: '/state3?param1&param2',
+          url: '/state3',
           controller: 'State3Ctrl',
           templateUrl: 'assets/templates/app/state3.html',
           data : {

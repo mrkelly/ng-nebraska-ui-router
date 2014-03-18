@@ -1,6 +1,8 @@
 angular.module('app.controllers', [ ])
-  .controller('AppCtrl', function ($scope, $state){
-
+  .controller('AppCtrl', function ($scope, $state, authentication){
+    $scope.logout = function logout () {
+      authentication.logout();
+    };
   })
   .controller('State1Ctrl', function ($scope, $stateParams){
 
