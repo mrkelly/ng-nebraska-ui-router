@@ -43,7 +43,7 @@ angular.module('app', [
               var deferred = $q.defer();
               $timeout(function() {
                  deferred.resolve('We can also use resolves to prevent a state from loading before all the required data is available.');
-              }, 1000);
+              }, 5000);
               return deferred.promise;
             }
           }
