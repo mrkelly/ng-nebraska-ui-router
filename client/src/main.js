@@ -5,7 +5,7 @@ angular.module('main', [
 ])
 
   .config(function ($urlRouterProvider) {
-    $urlRouterProvider.otherwise("/");
+    $urlRouterProvider.otherwise("/state1");
   })
 
   .run(function ($log, $state, $rootScope, $stateParams) {
