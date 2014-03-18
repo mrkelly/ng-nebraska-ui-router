@@ -5,6 +5,7 @@ angular.module('app', [
     $stateProvider
       .state('app', {
         url: '/',
+        controller: 'AppCtrl',
         templateUrl: 'assets/templates/app/index.html'
       });
   });
