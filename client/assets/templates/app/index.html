@@ -1,7 +1,7 @@
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Angular UI Router</a>
+      <a class="navbar-brand" href="#">{{$state.current.data.appTitle}}</a>
     </div>
     <ul class="nav navbar-nav">
       <li ui-sref-active="active"><a ui-sref="app.state1">State 1</a></li>
@@ -12,5 +12,19 @@
 </div>
 
 <div class="container">
-  <div ui-view></div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="pull-left">{{$state.current.data.stateTitle}}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <hr/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div ui-view></div>
+    </div>
+  </div>
 </div>
